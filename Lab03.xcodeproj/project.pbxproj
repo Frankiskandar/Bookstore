@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		017FA1991FA3C734000EC7FE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017FA1981FA3C734000EC7FE /* main.swift */; };
+		017FA1A01FA3C760000EC7FE /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017FA19F1FA3C760000EC7FE /* Book.swift */; };
+		017FA1A21FA3C772000EC7FE /* Bookstore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017FA1A11FA3C772000EC7FE /* Bookstore.swift */; };
+		017FA1A41FA3C787000EC7FE /* TempleBookstore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017FA1A31FA3C787000EC7FE /* TempleBookstore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,9 @@
 /* Begin PBXFileReference section */
 		017FA1951FA3C734000EC7FE /* Lab03 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Lab03; sourceTree = BUILT_PRODUCTS_DIR; };
 		017FA1981FA3C734000EC7FE /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		017FA19F1FA3C760000EC7FE /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		017FA1A11FA3C772000EC7FE /* Bookstore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookstore.swift; sourceTree = "<group>"; };
+		017FA1A31FA3C787000EC7FE /* TempleBookstore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempleBookstore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,9 @@
 			isa = PBXGroup;
 			children = (
 				017FA1981FA3C734000EC7FE /* main.swift */,
+				017FA19F1FA3C760000EC7FE /* Book.swift */,
+				017FA1A11FA3C772000EC7FE /* Bookstore.swift */,
+				017FA1A31FA3C787000EC7FE /* TempleBookstore.swift */,
 			);
 			path = Lab03;
 			sourceTree = "<group>";
@@ -120,7 +129,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				017FA1A21FA3C772000EC7FE /* Bookstore.swift in Sources */,
+				017FA1A01FA3C760000EC7FE /* Book.swift in Sources */,
 				017FA1991FA3C734000EC7FE /* main.swift in Sources */,
+				017FA1A41FA3C787000EC7FE /* TempleBookstore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
