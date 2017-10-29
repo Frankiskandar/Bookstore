@@ -18,7 +18,7 @@ class Book {
     // an Initializer: Takes in the title of the book, the number of pages in the book, the cost of the book and
     // the number of copies (quantity) of books and initializes each of the appropriate properties in
     //the object.
-    public func Book (theTitle: String, pages:Int, cost:Double, num: Int) {
+    public init(theTitle: String, pages:Int, cost:Double, num: Int) {
         self.title = theTitle
         self.numOfPages = pages
         self.price = cost
@@ -41,7 +41,7 @@ class Book {
     }
     // Returns all the information about a Book object as a String. (Add spaces or tabs to make it readable!)
     public func toString()-> String {
-        let info = "Title: \(self.title)\nNumber of Pages: \(self.numOfPages)\nPrice: $\(self.price)\nQuantity: \(self.quantity)"
+        let info = "Title: \(self.title)\nNumber of Pages: \(self.numOfPages)\nPrice: $\(self.price)\nQuantity: \(self.quantity)\n"
         
         return info
         

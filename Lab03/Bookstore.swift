@@ -13,14 +13,14 @@ class Bookstore {
     private final var books = [Book]()
     private var totalbooks :Int
     private var gross :Double
-    private static let MAXNUMOFBOOKS :Int = 10
+    private static let MAXNUMOFBOOKS :Int = 1000
     
     
     // an Initializer that creates a new, empty Bookstore object.
     public init() {
         books = []
         totalbooks = 0
-        gross = 0
+        gross = 0.0
     }
     
     // Adds a new Book b to the stock of the Bookstore object.
@@ -43,14 +43,23 @@ class Bookstore {
     public func inStock(title:String, quantity:Int)->Bool {
         for book in books {
             if book.getTitle() == title {
-                if book.getQuantity() > 1 {
-                    print("instock > 1")
+                if book.getQuantity() >= quantity {
+                    print("quantity available to sell")
                     return true
                 }
             }
         }
         return false
+    }
     
+    // Returns true if quantity or more copies of a book with the title are contained in the Bookstore object.
+    public func inStock(title:String)->Bool {
+        for book in books {
+            if book.getTitle() == title {
+                return true
+            }
+        }
+        return false
     }
     
     // Executes selling quantity number of books from the Bookstore object with the title to the
@@ -59,9 +68,11 @@ class Bookstore {
     public func sellBook(title:String, quantity:Int)->Bool {
         for book in books {
             if book.getTitle() == title {
-                if book.getQuantity() > quantity {
+                if book.getQuantity() >= quantity { //check the stock
                     book.subtractQuantity(amount: quantity)
                     print("sell in stock > quantity success")
+                    self.gross = self.gross + (book.getPrice() * Double(quantity))
+                
                     return true
                 }
             }
@@ -85,6 +96,7 @@ class Bookstore {
     }
     // Returns the total gross income of the Bookstore object.
     public func getIncome()->Double {
-        return 1.0
+        return self.gross
     }
+    
 }
