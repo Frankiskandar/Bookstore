@@ -44,7 +44,7 @@ class Bookstore {
         for book in books {
             if book.getTitle() == title {
                 if book.getQuantity() >= quantity {
-                    print("book in stock")
+                    //print("book in stock")
                     return true
                 }
             }
@@ -70,7 +70,7 @@ class Bookstore {
             if book.getTitle() == title {
                 if book.getQuantity() >= quantity { //check the stock
                     book.subtractQuantity(amount: quantity)
-                    print("sell in stock > quantity success")
+                    //print("sell in stock > quantity success")
                     self.gross = self.gross + (book.getPrice() * Double(quantity))
                 
                     return true
