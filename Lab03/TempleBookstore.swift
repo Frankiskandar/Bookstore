@@ -20,7 +20,6 @@ public class TempleBookstore {
         while true { // run the bookstore until user quits
             MainMenu()
             AskInput()
-            ExecuteCommand()
         }
     }
     
@@ -41,7 +40,7 @@ public class TempleBookstore {
         
         // command can only be 1-6
         while command != "1" && command != "2" && command != "3" && command != "4" && command != "5" && command != "6" {
-            print("command is \(command)")
+            //print("command is \(command)")
             print("Invalid input, try again")
             self.command = readLine()!
         }
@@ -58,7 +57,7 @@ public class TempleBookstore {
                 let quantity = Int(readLine()!)!
                 bookstore.addBookQuantity(title: title, quantity: quantity)
             }
-            // add new book
+            // ask and add new book
             else {
                 print("How many pages is it?")
                 let numPages = Int(readLine()!)!
@@ -84,20 +83,25 @@ public class TempleBookstore {
         if command == "2" {
             print("Which book would you like to sell?")
             let title = readLine()!
-            
             if bookstore.inStock(title: title) { // check if the book exists
                 print("Book exists")
-                print("How many copies will be sold?")
-                let quantity = Int(readLine()!)!
-                
-                if bookstore.inStock(title: title, quantity: quantity) {
-                    if bookstore.sellBook(title: title, quantity: quantity) { //check the quantity too, if true then sell
-                        print("Success! you have sold \(quantity) copy(s) of \(title)")
-                    } else {
-                        print("Sale failed")
+                // check if there is at lease 1 stock
+                if bookstore.inStock(title: title, quantity: 1) {
+                    print("How many copies will be sold?")
+                    let quantity = Int(readLine()!)!
+                    //if stock > 1, check if the stock is bigger than the user wants to sell, if yes, execute!
+                    if bookstore.inStock(title: title, quantity: quantity) {
+                        if bookstore.sellBook(title: title, quantity: quantity) { //check the quantity too, if true then sell
+                            print("Success! you have sold \(quantity) copy(s) of \(title)")
+                        } else {
+                            // stock < input
+                            print("Sale failed")
+                        }
+                    } else { // instock fails
+                        print("Book's quantity in the system is lesser than input")
                     }
-                } else { // instock fails
-                    print("Book's quantity in the system is lesser than input")
+                } else {
+                    print("Book has no stock")
                 }
             } else { // book does not exists
                 print("Book does not exist in the system")
@@ -132,8 +136,5 @@ public class TempleBookstore {
         }
     }
     
-    public func ExecuteCommand() {
-        
-    }
     
 }

@@ -44,7 +44,7 @@ class Bookstore {
         for book in books {
             if book.getTitle() == title {
                 if book.getQuantity() >= quantity {
-                    print("quantity available to sell")
+                    print("book in stock")
                     return true
                 }
             }
